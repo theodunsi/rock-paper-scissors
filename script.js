@@ -19,4 +19,10 @@ function getComputerChoice () {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    // Prompt user for an input of either "rock" "paper" or "scissors"
+    let humanChoice = prompt("rock, paper or scissors?");
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
