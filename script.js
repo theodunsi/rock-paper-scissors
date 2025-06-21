@@ -51,11 +51,10 @@ function playRound(humanChoice, computerChoice) {
 
 //Play a game of 5 rounds and announce winner
 function playGame() {
-    let i;
     let humanScore = 0;
     let computerScore = 0;
 
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         // Get fresh user and computer choices 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -76,6 +75,7 @@ function playGame() {
         }
     }
 
+    // Print out winner onto browser
     if (humanScore > computerScore) {
     alert("You win!");
     }
@@ -87,6 +87,7 @@ function playGame() {
     } 
 }
 
+// Start the game
 playGame();
 
 
