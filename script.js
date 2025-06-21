@@ -37,32 +37,17 @@ function playRound(humanChoice, computerChoice) {
     // Make humanChoice case insensitive
     humanChoice = humanChoice.toLowerCase()
 
-    // Check for a winner
+    // Check for a winner & return winner 
     if (humanChoice === computerChoice) {
-        humanScore;
-        computerScore;
+        return "draw";
     }
     else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock") {
-        humanScore += 1;
-    }
-    else {
-        computerScore += 1;
-    }
-
-    // Return an indication of the winner
-    if (humanScore > computerScore) {
         return "human";
     }
-    else if (computerScore > humanScore) {
+    else {
         return "computer";
     }
-    else {
-        return "draw";
-    } 
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 //Play a game of 5 rounds and announce winner
 function playGame() {
@@ -71,11 +56,19 @@ function playGame() {
     let computerScore = 0;
 
     for (i = 0; i < 5; i++) {
+        // Get fresh user and computer choices 
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
         // Play a single round each iteration
-        let result = playRound(humanSelection, computerSelection)
+        let result = playRound(humanSelection, computerSelection);
         
         // Check for return value and increment scores variables
-        if (result === "human") {
+        if (result === "draw") {
+            humanScore += 0;
+            computerScore += 0;
+        }
+        else if (result === "human") {
             humanScore += 1;
         }
         else if (result === "computer") {
@@ -84,14 +77,17 @@ function playGame() {
     }
 
     if (humanScore > computerScore) {
-    console.log("You win!");
+    alert("You win!");
     }
     else if (computerScore > humanScore) {
-    console.log("You lose!");
+    alert("You lose!");
     }
     else {
-    console.log("Draw!")
+    alert("Draw!")
     } 
 }
+
+playGame();
+
 
 
