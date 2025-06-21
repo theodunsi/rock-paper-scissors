@@ -30,8 +30,10 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+
 // Play a single round
 function playRound(humanChoice, computerChoice) {
+
     // Make humanChoice case insensitive
     humanChoice = humanChoice.toLowerCase()
 
@@ -47,19 +49,49 @@ function playRound(humanChoice, computerChoice) {
         computerScore += 1;
     }
 
-    //  Print out round result
+    // Return an indication of the winner
     if (humanScore > computerScore) {
-        console.log("You win! " + humanChoice + " beats " + computerChoice + ".");
+        return "human";
     }
     else if (computerScore > humanScore) {
-        console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
+        return "computer";
     }
     else {
-        console.log("Draw!")
-    }
+        return "draw";
+    } 
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+//Play a game of 5 rounds and announce winner
+function playGame() {
+    let i;
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (i = 0; i < 5; i++) {
+        // Play a single round each iteration
+        let result = playRound(humanSelection, computerSelection)
+        
+        // Check for return value and increment scores variables
+        if (result === "human") {
+            humanScore += 1;
+        }
+        else if (result === "computer") {
+            computerScore += 1;
+        }
+    }
+
+    if (humanScore > computerScore) {
+    console.log("You win!");
+    }
+    else if (computerScore > humanScore) {
+    console.log("You lose!");
+    }
+    else {
+    console.log("Draw!")
+    } 
+}
+
+
