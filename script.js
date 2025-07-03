@@ -63,7 +63,6 @@ function playRound(humanChoice, computerChoice) {
     }
     else if (computerScore === 5) {
         results.textContent = `You lose! Computer wins.`;
-        return;
     }
 }
 
@@ -84,93 +83,3 @@ document.body.appendChild(btnRock);
 document.body.appendChild(btnPaper);
 document.body.appendChild(btnScissors);
 });
-
-
-
-
-//Play a game of 5 rounds and announce winner
-// function playGame() {
-//     let humanScore = 0;
-//     let computerScore = 0;
-
-//     for (let i = 0; i < 5; i++) {
-//         // Get fresh user and computer choices 
-//         const humanSelection = getHumanChoice();
-//         const computerSelection = getComputerChoice();
-
-//         // Play a single round each iteration
-//         let result = playRound(humanSelection, computerSelection);
-        
-//         // Check for return value and increment scores variables
-//         if (result === "draw") {
-//             humanScore += 0;
-//             computerScore += 0;
-//         }
-//         else if (result === "human") {
-//             humanScore += 1;
-//         }
-//         else if (result === "computer") {
-//             computerScore += 1;
-//         }
-//     }
-
-//     // Print out winner onto browser
-//     if (humanScore > computerScore) {
-//     alert("You win!");
-//     }
-//     else if (computerScore > humanScore) {
-//     alert("You lose!");
-//     }
-//     else {
-//     alert("Draw!")
-//     } 
-// }
-
-// Start the game
-// playGame();
-
-
-// for (let i = 1; i <= 10; i++) {
-//     if (i % 2 === 0) {
-//         alert (i);
-//     }
-// }
-
-// for (let i = 0; i < 3; i++) {
-//   alert( `number ${i}!` );
-// }
-// let i = 0;
-// while (i < 3) {
-//     alert(`number ${i}` );
-//     i++;
-// }
-
-// let input;
-// do {
-//     input = prompt("Enter a number: ");
-//     if (!input) break;
-// }
-// while (input < 100);
-
-// function sumOfTripledEvens(array) {
-//   let sum = 0;
-//   for (let i = 0; i < array.length; i++) {
-//     // Step 1: If the element is an even number
-//     if (array[i] % 2 === 0) {
-//       // Step 2: Multiply this number by three
-//       const tripleEvenNumber = array[i] * 3;
-
-//       // Step 3: Add the new number to the total
-//       sum += tripleEvenNumber;
-//     }
-//   }
-//   return sum;
-// }
-
-// function camelize(str) {
-//     let parts = str.split(-);
-//     alert (parts); 
-// }
-
-//  parts = parts.charAt(0).toUpperCase() + parts.slice(1);
-//     let combine = parts.join();
